@@ -17,6 +17,7 @@
             android:src="@drawable/logo" />
 
         <Button
+            android:id="@+id/plus_Btn"
             android:layout_width="64dp"
             android:layout_height="62dp"
             android:layout_marginLeft="320dp"
