@@ -16,6 +16,15 @@
             android:src="@drawable/logo"
             android:layout_marginTop="180dp"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GrowDiary"
+            android:textSize="50dp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            />
+
     </LinearLayout>
 
 
