@@ -17,10 +17,10 @@
             android:src="@drawable/logo" />
 
         <Button
-            android:layout_width="66dp"
+            android:layout_width="64dp"
             android:layout_height="62dp"
-            android:layout_marginTop="495dp"
             android:layout_marginLeft="320dp"
+            android:layout_marginTop="400dp"
             android:background="@drawable/shape_for_circle_green_button"
             android:text="+"
             android:textSize="40sp"
