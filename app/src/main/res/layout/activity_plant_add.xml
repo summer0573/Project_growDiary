@@ -31,7 +31,8 @@ android:background="@color/white">
 
         <EditText
             android:layout_width="326dp"
-            android:layout_height="101dp"/>
+            android:layout_height="101dp"
+            android:background="@drawable/memo_border"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -43,7 +44,8 @@ android:background="@color/white">
 
         <EditText
             android:layout_width="326dp"
-            android:layout_height="101dp"/>
+            android:layout_height="101dp"
+            android:background="@drawable/memo_border"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -55,19 +57,19 @@ android:background="@color/white">
 
         <EditText
             android:layout_width="326dp"
-            android:layout_height="101dp"/>
+            android:layout_height="101dp"
+            android:background="@drawable/memo_border"/>
 
         <Button
-        android:id="@+id/grow_btn"
-        android:text="GROW"
-        android:textSize="20dp"
-        android:background="#A9DBB7"
-        android:layout_width="100dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="580dp"
-        android:layout_marginLeft="15dp"/>
+            android:id="@+id/grow_btn"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="15dp"
+            android:background="#A9DBB7"
+            android:text="GROW"
+            android:textSize="20dp" />
 
-</LinearLayout>
+    </LinearLayout>
 
 
 
