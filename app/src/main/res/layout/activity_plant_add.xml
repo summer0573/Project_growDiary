@@ -16,4 +16,14 @@ android:layout_height="match_parent"
         android:scaleType="fitCenter"
         app:srcCompat="@drawable/ic_baseline_add_a_photo_24" />
 
+    <Button
+        android:id="@+id/grow_btn"
+        android:text="GROW"
+        android:textSize="20dp"
+        android:background="#A9DBB7"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="580dp"
+        android:layout_marginLeft="15dp"/>
+
 </LinearLayout>
