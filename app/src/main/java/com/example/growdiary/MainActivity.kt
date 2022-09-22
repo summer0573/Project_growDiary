@@ -3,6 +3,7 @@ package com.example.growdiary
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
@@ -12,9 +13,11 @@ class MainActivity : AppCompatActivity() {
 
         val plusButton = findViewById<Button>(R.id.plus_Btn)
         plusButton.setOnClickListener {
+            Log.d("mytag", "plus button")
             val intent = Intent(this, plantAddActivity::class.java)
-            //intent.putExtra("userInput")
             startActivity(intent)
         }
+
+
     }
 }
