@@ -22,6 +22,7 @@ android:background="@color/white">
         app:srcCompat="@drawable/ic_baseline_add_a_photo_24" />
 
     <TextView
+        android:layout_marginLeft="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
@@ -30,11 +31,13 @@ android:background="@color/white">
 
 
         <EditText
-            android:layout_width="326dp"
+            android:layout_gravity="center"
+            android:layout_width="383dp"
             android:layout_height="101dp"
-            android:background="@drawable/memo_border"/>
+            android:background="@drawable/memo_border" />
 
         <TextView
+            android:layout_marginLeft="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
@@ -43,11 +46,13 @@ android:background="@color/white">
 
 
         <EditText
-            android:layout_width="326dp"
+            android:layout_gravity="center"
+            android:layout_width="387dp"
             android:layout_height="101dp"
-            android:background="@drawable/memo_border"/>
+            android:background="@drawable/memo_border" />
 
         <TextView
+            android:layout_marginLeft="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
@@ -56,18 +61,20 @@ android:background="@color/white">
 
 
         <EditText
-            android:layout_width="326dp"
+            android:layout_gravity="center"
+            android:layout_width="383dp"
             android:layout_height="101dp"
-            android:background="@drawable/memo_border"/>
+            android:background="@drawable/memo_border" />
 
         <Button
             android:id="@+id/grow_btn"
-            android:layout_width="100dp"
-            android:layout_height="70dp"
-            android:layout_marginLeft="15dp"
-            android:background="#A9DBB7"
             android:text="GROW"
-            android:textSize="20dp" />
+            android:textSize="17dp"
+            android:background="#A9DBB7"
+            android:layout_marginTop="50dp"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="300dp"/>
 
     </LinearLayout>
 
