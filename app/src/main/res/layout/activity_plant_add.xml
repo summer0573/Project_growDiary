@@ -32,6 +32,7 @@ android:background="@color/white">
 
         <EditText
             android:layout_gravity="center"
+            android:textColor="@color/black"
             android:layout_width="383dp"
             android:layout_height="101dp"
             android:background="@drawable/memo_border" />
@@ -46,6 +47,7 @@ android:background="@color/white">
 
 
         <EditText
+            android:textColor="@color/black"
             android:layout_gravity="center"
             android:layout_width="387dp"
             android:layout_height="101dp"
@@ -61,6 +63,7 @@ android:background="@color/white">
 
 
         <EditText
+            android:textColor="@color/black"
             android:layout_gravity="center"
             android:layout_width="383dp"
             android:layout_height="101dp"
