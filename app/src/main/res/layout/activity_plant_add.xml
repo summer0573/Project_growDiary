@@ -18,7 +18,7 @@ android:background="@color/white">
         android:layout_height="120dp"
         android:layout_marginLeft="145dp"
         android:layout_marginTop="20dp"
-        android:scaleType="fitCenter"
+        android:scaleType="fitXY"
         app:srcCompat="@drawable/ic_baseline_add_a_photo_24" />
 
     <TextView
@@ -61,13 +61,17 @@ android:background="@color/white">
             android:text="식물 종류"
             android:textSize="25dp"/>
 
-
-        <EditText
-            android:textColor="@color/black"
-            android:layout_gravity="center"
-            android:layout_width="383dp"
-            android:layout_height="101dp"
-            android:background="@drawable/memo_border" />
+        <Spinner
+            android:background="@drawable/spinner_background"
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:layout_margin="10dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/grow_btn"

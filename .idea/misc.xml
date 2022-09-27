@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Mirim/AndroidStudioProjects/Project_growDiary/app/src/main/res/drawable/spinner_background.xml" value="0.1" />
+        <entry key="..\:/Users/Mirim/AndroidStudioProjects/Project_growDiary/app/src/main/res/drawable/style.xml" value="0.1" />
+        <entry key="..\:/Users/Mirim/AndroidStudioProjects/Project_growDiary/app/src/main/res/layout/activity_plant_add.xml" value="0.1" />
         <entry key="..\:/Users/Mirim/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/activity_list_item.xml" value="0.2625" />
         <entry key="..\:/Users/Mirim/growDiary/app/src/main/res/drawable/ic_baseline_add_a_photo_24.xml" value="0.255" />
         <entry key="..\:/Users/Mirim/growDiary/app/src/main/res/drawable/ic_image.xml" value="0.1" />
