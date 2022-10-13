@@ -17,7 +17,6 @@ class CalendarActivity : AppCompatActivity() {
     var userID: String = "userID"
     lateinit var calendarView: CalendarView
     lateinit var diaryTextView: TextView
-    lateinit var title:TextView
     lateinit var contextEditText: EditText
 
 
@@ -29,7 +28,6 @@ class CalendarActivity : AppCompatActivity() {
         calendarView=findViewById(R.id.calendarView)
         diaryTextView=findViewById(R.id.diaryTextView)
 
-        title.text = "달력 일기장"
 
         calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
             diaryTextView.text = String.format("%d / %d / %d", year, month + 1, dayOfMonth)
