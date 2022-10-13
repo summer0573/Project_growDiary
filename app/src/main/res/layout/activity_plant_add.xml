@@ -42,26 +42,11 @@ android:background="@color/white">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text="심은 날짜"
-            android:textSize="25dp"/>
-
-
-        <EditText
-            android:textColor="@color/black"
-            android:layout_gravity="center"
-            android:layout_width="387dp"
-            android:layout_height="101dp"
-            android:background="@drawable/memo_border" />
-
-        <TextView
-            android:layout_marginLeft="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
             android:text="식물 종류"
             android:textSize="25dp"/>
 
         <Spinner
+            android:layout_marginLeft="15dp"
             android:background="@drawable/spinner_background"
             android:id="@+id/spinner"
             android:layout_width="match_parent"
@@ -72,6 +57,24 @@ android:background="@color/white">
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="날짜 선택"
+            android:textSize="25dp"/>
+
+        <Button
+            android:id="@+id/date_btn"
+            android:text="date"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:layout_width="383dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/spinner_background"/>
 
         <Button
             android:id="@+id/grow_btn"

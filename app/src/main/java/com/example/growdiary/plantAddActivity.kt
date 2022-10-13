@@ -1,15 +1,16 @@
 package com.example.growdiary
 
+
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.AttributeSet
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.ImageView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.growdiary.databinding.ActivityMainBinding
+
 import com.example.growdiary.databinding.ActivityPlantAddBinding
 
 
@@ -38,8 +39,8 @@ class plantAddActivity : AppCompatActivity() {
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, itemList)
 
         binding.spinner.adapter = adapter
-
         binding.spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+
             override fun onItemSelected(
                 parent: AdapterView<*>?,
                 view: View?,
@@ -52,9 +53,13 @@ class plantAddActivity : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
             }
-
             override fun onNothingSelected(parent: AdapterView<*>?) {}
+        }
 
+        var button : Button = findViewById(R.id.date_btn)
+        button.setOnClickListener {
+            val intent = Intent(this, CalendarActivity::class.java)
+            startActivity(intent)
         }
     }
 
