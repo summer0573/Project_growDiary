@@ -21,21 +21,16 @@ android:background="@color/white">
         android:scaleType="fitXY"
         app:srcCompat="@drawable/ic_baseline_add_a_photo_24" />
 
-    <TextView
-        android:layout_marginLeft="15dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:text="이름"
-        android:textSize="25dp"/>
-
-
         <EditText
+            android:hint="이름"
+            android:textColorHint="#C5C5C5"
+            android:layout_width="284dp"
+            android:layout_height="55dp"
             android:layout_gravity="center"
+            android:background="@drawable/memo_border"
+            android:gravity="center"
             android:textColor="@color/black"
-            android:layout_width="383dp"
-            android:layout_height="101dp"
-            android:background="@drawable/memo_border" />
+            />
 
         <TextView
             android:layout_marginLeft="15dp"
