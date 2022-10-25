@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1041001448362",
+    "project_id": "growdiary-add-plant",
+    "storage_bucket": "growdiary-add-plant.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1041001448362:android:7df30c4e44c3648d3421d3",
+        "android_client_info": {
+          "package_name": "com.example.growdiary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1041001448362-njkdb1ugiuvnfled568e12bl7509fndv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.growdiary",
+            "certificate_hash": "96df1df33a0befe1406d57b8cd26a57c3eadeb22"
+          }
+        },
+        {
+          "client_id": "1041001448362-8fc68qof912q4mibb3v6fh6vd2hbbbe0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtbcTOcu3q_UDg0E6mC0QQdjZmWCnubCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1041001448362-8fc68qof912q4mibb3v6fh6vd2hbbbe0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

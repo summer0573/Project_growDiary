@@ -17,16 +17,18 @@ android:background="@color/white">
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_marginLeft="145dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:scaleType="fitXY"
             app:srcCompat="@drawable/ic_baseline_add_a_photo_24" />
 
         <EditText
+            android:id="@+id/name_EditText"
             android:hint="이름"
             android:textColorHint="#C5C5C5"
             android:layout_width="284dp"
             android:layout_height="55dp"
             android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:background="@drawable/memo_border"
             android:gravity="center"
             android:textColor="@color/black"
@@ -36,6 +38,7 @@ android:background="@color/white">
             android:layout_marginLeft="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:textColor="@color/black"
             android:text="식물 종류"
             android:textSize="25dp"/>
@@ -58,6 +61,7 @@ android:background="@color/white">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
+            android:layout_marginTop="30dp"
             android:text="날짜 선택"
             android:textSize="25dp"/>
 
