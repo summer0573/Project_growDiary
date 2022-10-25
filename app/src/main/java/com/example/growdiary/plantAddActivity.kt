@@ -65,7 +65,7 @@ class plantAddActivity : AppCompatActivity() {
             ActivityResultContracts.StartActivityForResult()) {
                 result ->
                     if(result.resultCode == RESULT_OK) {
-                        binding.dateBtn.text = result.data?.getStringExtra("date")!!
+                        binding.dateBtn.text = result.data?.getStringExtra("date")
                     }
         }
 
@@ -75,11 +75,11 @@ class plantAddActivity : AppCompatActivity() {
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == GET_GALLERY_IMAGE && resultCode == RESULT_OK && data != null && data.data != null) {
-            val selectedImageUri = data.data
-            imageview!!.setImageURI(selectedImageUri)
-        }
-    }
+//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+//        super.onActivityResult(requestCode, resultCode, data)
+//        if (requestCode == GET_GALLERY_IMAGE && resultCode == RESULT_OK && data != null && data.data != null) {
+//            val selectedImageUri = data.data
+//            imageview!!.setImageURI(selectedImageUri)
+//        }
+//    }
 }
