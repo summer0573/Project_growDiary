@@ -21,9 +21,11 @@ class plantAddActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_plant_add)
-        imageview = findViewById<View>(R.id.imageView) as ImageView
-        imageview!!.setOnClickListener {
+
+        binding = ActivityPlantAddBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+        binding.imageView.setOnClickListener {
             val intent = Intent(Intent.ACTION_PICK)
             intent.setDataAndType(
                 MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
@@ -31,9 +33,6 @@ class plantAddActivity : AppCompatActivity() {
             )
             startActivityForResult(intent, GET_GALLERY_IMAGE)
         }
-        binding = ActivityPlantAddBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
 
         val itemList = listOf("다육이", "채소", "과일", "허브", "반려식물")
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, itemList)

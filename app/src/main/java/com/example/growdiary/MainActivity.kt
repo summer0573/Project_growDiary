@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import androidx.core.content.ContextCompat.startActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,7 +18,5 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, plantAddActivity::class.java)
             startActivity(intent)
         }
-
-
     }
 }
