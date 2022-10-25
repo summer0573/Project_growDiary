@@ -30,7 +30,7 @@ class CalendarActivity : AppCompatActivity() {
         diaryTextView = findViewById(R.id.diaryTextView)
 
         calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
-            val date = String.format("%d / %d / %d", year, month + 1, dayOfMonth)
+            val date = String.format("%d - %d - %d", year, month + 1, dayOfMonth)
             val dataIntent = Intent(this, plantAddActivity::class.java)
             dataIntent.putExtra("date", date)
 //            val dataIntent = Intent(this, plantAddActivity::class.java).apply {
