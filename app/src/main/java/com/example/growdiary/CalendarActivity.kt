@@ -1,11 +1,13 @@
 package com.example.growdiary
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import java.io.FileInputStream
 import java.io.FileOutputStream
 
 import android.view.View
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.CalendarView
 import android.widget.EditText
@@ -28,8 +30,16 @@ class CalendarActivity : AppCompatActivity() {
         diaryTextView = findViewById(R.id.diaryTextView)
 
         calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
-            diaryTextView.text = String.format("%d / %d / %d", year, month + 1, dayOfMonth)
-//            checkDay(year, month, dayOfMonth, userID)
+            val date = String.format("%d / %d / %d", year, month + 1, dayOfMonth)
+            val dataIntent = Intent(this, plantAddActivity::class.java)
+            dataIntent.putExtra("date", date)
+//            val dataIntent = Intent(this, plantAddActivity::class.java).apply {
+//                putExtra("date", date)
+//            }
+            setResult(RESULT_OK, dataIntent)
+            finish()
+            // diaryTextView.text = String.format("%d / %d / %d", year, month + 1, dayOfMonth)
+            // checkDay(year, month, dayOfMonth, userID)
         }
     }
 }

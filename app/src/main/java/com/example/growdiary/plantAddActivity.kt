@@ -1,13 +1,18 @@
 package com.example.growdiary
 
 
+import android.app.Activity.RESULT_OK
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.AttributeSet
+import android.util.Log
 import android.view.View
 import android.widget.*
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContract
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.growdiary.databinding.ActivityMainBinding
 
@@ -18,6 +23,7 @@ class plantAddActivity : AppCompatActivity() {
     private val GET_GALLERY_IMAGE = 200
     private var imageview: ImageView? = null
     lateinit var binding: ActivityPlantAddBinding
+    lateinit var getResult: ActivityResultLauncher<Intent>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,10 +61,17 @@ class plantAddActivity : AppCompatActivity() {
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
 
-        var button : Button = findViewById(R.id.date_btn)
-        button.setOnClickListener {
+        getResult = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()) {
+                result ->
+                    if(result.resultCode == RESULT_OK) {
+                        binding.dateBtn.text = result.data?.getStringExtra("date")!!
+                    }
+        }
+
+        binding.dateBtn.setOnClickListener {
             val intent = Intent(this, CalendarActivity::class.java)
-            startActivity(intent)
+            getResult.launch(intent)
         }
     }
 
