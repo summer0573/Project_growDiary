@@ -40,6 +40,8 @@ class plantAddActivity : AppCompatActivity() {
             startActivityForResult(intent, GET_GALLERY_IMAGE)
         }
 
+
+
         val itemList = listOf("다육이", "채소", "과일", "허브", "반려식물")
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, itemList)
 
