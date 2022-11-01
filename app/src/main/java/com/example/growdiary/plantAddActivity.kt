@@ -31,14 +31,15 @@ class plantAddActivity : AppCompatActivity() {
         binding = ActivityPlantAddBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-        binding.imageView.setOnClickListener {
-            val intent = Intent(Intent.ACTION_PICK)
-            intent.setDataAndType(
-                MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
-                "image/*"
-            )
-            startActivityForResult(intent, GET_GALLERY_IMAGE)
-        }
+
+//        binding.imageView.setOnClickListener {
+//            val intent = Intent(Intent.ACTION_PICK)
+//            intent.setDataAndType(
+//                MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+//                "image/*"
+//            )
+//            startActivityForResult(intent, GET_GALLERY_IMAGE)
+//        }
 
 
 
