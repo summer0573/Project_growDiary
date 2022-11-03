@@ -25,15 +25,14 @@ class plantAddFirebase : AppCompatActivity() {
         var dateBtn = findViewById<Button>(R.id.date_btn)
 
         growBtn.setOnClickListener {
-            val plantImage = findViewById<ImageView>(R.id.imageView)
+            Log.d("mytag", "grow Button")
             val plantName = findViewById<EditText>(R.id.name_EditText).text.toString()
-            val plantSpinner = findViewById<Spinner>(R.id.spinner)
+            //val plantSpinner = findViewById<Spinner>(R.id.spinner)
             val plantDate = dateBtn.text.toString()
             //날짜
             val plants = hashMapOf(
-                "image" to plantImage,
                 "name" to plantName,
-                "Spinner" to plantSpinner,
+                //"Spinner" to plantSpinner,
                 "date" to plantDate
                 //날짜
             )
@@ -42,7 +41,7 @@ class plantAddFirebase : AppCompatActivity() {
                 .addOnSuccessListener {
                     Log.d("mytag", "DocumentSnapshot successfully written!")
                 }
-                .addOnFailureListener { e -> Log.w("mytag", "Error writing document", e) }
+                .addOnFailureListener { e -> Log.d("mytag", "Error writing document", e) }
 
 
         }
