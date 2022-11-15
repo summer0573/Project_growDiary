@@ -17,6 +17,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.growdiary.databinding.ActivityMainBinding
 
 import com.example.growdiary.databinding.ActivityPlantAddBinding
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 
 class plantAddActivity : AppCompatActivity() {
@@ -28,6 +30,7 @@ class plantAddActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        val db = Firebase.firestore
         binding = ActivityPlantAddBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
@@ -75,6 +78,26 @@ class plantAddActivity : AppCompatActivity() {
         binding.dateBtn.setOnClickListener {
             val intent = Intent(this, CalendarActivity::class.java)
             getResult.launch(intent)
+        }
+
+        binding.growBtn.setOnClickListener {
+            val plantName = findViewById<EditText>(R.id.name_EditText).text.toString()
+            val plantSpinner = findViewById<Spinner>(R.id.spinner).selectedItem.toString()
+            val plantDate = findViewById<Button>(R.id.date_btn).text.toString()
+            //날짜
+            val plants = hashMapOf(
+                "name" to plantName,
+                "Spinner" to plantSpinner,
+                "date" to plantDate
+                //날짜
+            )
+            db.collection("plants")
+                .document()
+                .set(plants)
+                .addOnSuccessListener {
+                    Log.d("mytag", "DocumentSnapshot successfully written!")
+                }
+                .addOnFailureListener { e -> Log.d("mytag", "Error writing document", e) }
         }
     }
 

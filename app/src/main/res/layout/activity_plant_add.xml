@@ -45,9 +45,9 @@ android:background="@color/white">
             android:textSize="25dp"/>
 
         <Spinner
+            android:id="@+id/spinner"
             android:layout_marginLeft="15dp"
             android:background="@drawable/spinner_background"
-            android:id="@+id/spinner"
             android:layout_width="match_parent"
             android:layout_height="49dp"
             android:layout_margin="10dp"
