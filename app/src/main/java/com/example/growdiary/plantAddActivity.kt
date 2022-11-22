@@ -22,8 +22,6 @@ import com.google.firebase.ktx.Firebase
 
 
 class plantAddActivity : AppCompatActivity() {
-    private val GET_GALLERY_IMAGE = 200
-    private var imageview: ImageView? = null
     lateinit var binding: ActivityPlantAddBinding
     lateinit var getResult: ActivityResultLauncher<Intent>
 
@@ -34,17 +32,6 @@ class plantAddActivity : AppCompatActivity() {
         binding = ActivityPlantAddBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
-//        binding.imageView.setOnClickListener {
-//            val intent = Intent(Intent.ACTION_PICK)
-//            intent.setDataAndType(
-//                MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
-//                "image/*"
-//            )
-//            startActivityForResult(intent, GET_GALLERY_IMAGE)
-//        }
-
-
 
         val itemList = listOf("다육이", "채소", "과일", "허브", "반려식물")
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, itemList)
@@ -96,16 +83,11 @@ class plantAddActivity : AppCompatActivity() {
                 .set(plants)
                 .addOnSuccessListener {
                     Log.d("mytag", "DocumentSnapshot successfully written!")
+                    Toast.makeText(applicationContext, "식물 정보 저장 성공", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
                 }
                 .addOnFailureListener { e -> Log.d("mytag", "Error writing document", e) }
         }
     }
-
-//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-//        super.onActivityResult(requestCode, resultCode, data)
-//        if (requestCode == GET_GALLERY_IMAGE && resultCode == RESULT_OK && data != null && data.data != null) {
-//            val selectedImageUri = data.data
-//            imageview!!.setImageURI(selectedImageUri)
-//        }
-//    }
 }
