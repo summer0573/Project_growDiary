@@ -28,6 +28,7 @@ class plantAddActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
         val db = Firebase.firestore
         binding = ActivityPlantAddBinding.inflate(layoutInflater)
         val view = binding.root
@@ -71,6 +72,7 @@ class plantAddActivity : AppCompatActivity() {
             val plantName = findViewById<EditText>(R.id.name_EditText).text.toString()
             val plantSpinner = findViewById<Spinner>(R.id.spinner).selectedItem.toString()
             val plantDate = findViewById<Button>(R.id.date_btn).text.toString()
+
             //날짜
             val plants = hashMapOf(
                 "name" to plantName,

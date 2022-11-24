@@ -16,7 +16,6 @@ import androidx.appcompat.app.AppCompatActivity
 
 
 class CalendarActivity : AppCompatActivity() {
-    var userID: String = "userID"
     lateinit var calendarView: CalendarView
     lateinit var diaryTextView: TextView
 
@@ -33,13 +32,8 @@ class CalendarActivity : AppCompatActivity() {
             val date = String.format("%d - %d - %d", year, month + 1, dayOfMonth)
             val dataIntent = Intent(this, plantAddActivity::class.java)
             dataIntent.putExtra("date", date)
-//            val dataIntent = Intent(this, plantAddActivity::class.java).apply {
-//                putExtra("date", date)
-//            }
             setResult(RESULT_OK, dataIntent)
             finish()
-            // diaryTextView.text = String.format("%d / %d / %d", year, month + 1, dayOfMonth)
-            // checkDay(year, month, dayOfMonth, userID)
         }
     }
 }
