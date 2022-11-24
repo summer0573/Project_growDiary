@@ -3,7 +3,7 @@
 
 <br>
 
-![캡처](https://user-images.githubusercontent.com/83991079/201904062-9e11b35b-0f14-4ca0-bd24-80f5bdcc65da.JPG)
+![캡처](https://user-images.githubusercontent.com/83991079/203765099-305abf6d-f9cf-49df-b5f8-d4eed96dd06b.png)
 
 
 ## 소개
