@@ -95,28 +95,5 @@ class plantAddActivity : AppCompatActivity() {
 
 
         }
-
-
-        //메인 화면에 데이터 나열하기
-        binding.growBtn.setOnClickListener {
-            db.collection("Contacts")   // 작업할 컬렉션
-                .get()      // 문서 가져오기
-                .addOnSuccessListener { result ->
-                    // 성공할 경우
-                    for (document in result) {  // 가져온 문서들은 result에 들어감
-                        val item =
-                            ListLayout(
-                                document["name"] as String,
-                                document["Spinner"] as String,
-                                document["date"] as String
-                            )
-                    }
-                    adapter.notifyDataSetChanged()  // 리사이클러 뷰 갱신
-                }
-                .addOnFailureListener { exception ->
-                    // 실패할 경우
-                    Log.w("MainActivity", "Error getting documents: $exception")
-                }
-        }
     }
 }
