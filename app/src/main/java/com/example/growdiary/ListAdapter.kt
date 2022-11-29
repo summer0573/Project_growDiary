@@ -21,11 +21,13 @@ class ListAdapter(val itemList: ArrayList<ListLayout>): RecyclerView.Adapter<Lis
 
     override fun onBindViewHolder(holder: ListAdapter.ViewHolder, position: Int) {
         holder.name.text = itemList[position].name
-        holder.number.text = itemList[position].number
+        holder.Spinner.text = itemList[position].Spinner
+        holder.date.text = itemList[position].date
     }
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val name: TextView = itemView.findViewById(R.id.list_tv_name)
-        val number: TextView = itemView.findViewById(R.id.list_tv_number)
+        val Spinner: TextView = itemView.findViewById(R.id.list_tv_spinner)
+        val date: TextView = itemView.findViewById(R.id.list_tv_date)
     }
 }

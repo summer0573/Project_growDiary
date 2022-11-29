@@ -7,6 +7,7 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.growdiary.databinding.ActivityMainBinding
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.firestore.FirebaseFirestore
 
 class MainActivity : AppCompatActivity() {
@@ -23,10 +24,36 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        binding.rvList.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        binding.rvList.adapter = adapter
 
-        val plusButton = findViewById<Button>(R.id.plus_Btn)
+        val itemList: ArrayList<ListLayout> = ArrayList()
+        db.collection("plants")   // 작업할 컬렉션
+            .get()      // 문서 가져오기
+            .addOnSuccessListener { result ->
+                // 성공할 경우
+
+                for (document in result) {  // 가져온 문서들은 result에 들어감
+                    val item =
+                        ListLayout(
+                            document["name"] as String,
+                            document["Spinner"] as String,
+                            document["date"] as String
+                        )
+                    itemList.add(item)
+                }
+                Log.d("mytag", itemList.toString())
+                // adapter.notifyDataSetChanged()  // 리사이클러 뷰 갱신
+                binding.rvList.layoutManager = LinearLayoutManager(this)
+                binding.rvList.adapter = ListAdapter(itemList)
+
+            }
+            .addOnFailureListener { exception ->
+                // 실패할 경우
+                Log.w("MainActivity", "Error getting documents: $exception")
+            }
+
+
+
+        val plusButton = findViewById<FloatingActionButton>(R.id.plus_Btn)
         plusButton.setOnClickListener {
             Log.d("mytag", "plus button")
             val intent = Intent(this, plantAddActivity::class.java)

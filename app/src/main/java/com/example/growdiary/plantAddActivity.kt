@@ -14,6 +14,7 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContract
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.growdiary.databinding.ActivityMainBinding
 
 import com.example.growdiary.databinding.ActivityPlantAddBinding
@@ -52,15 +53,16 @@ class plantAddActivity : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
             }
+
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
 
         getResult = registerForActivityResult(
-            ActivityResultContracts.StartActivityForResult()) {
-                result ->
-                    if(result.resultCode == RESULT_OK) {
-                        binding.dateBtn.text = result.data?.getStringExtra("date")
-                    }
+            ActivityResultContracts.StartActivityForResult()
+        ) { result ->
+            if (result.resultCode == RESULT_OK) {
+                binding.dateBtn.text = result.data?.getStringExtra("date")
+            }
         }
 
         binding.dateBtn.setOnClickListener {
@@ -90,6 +92,31 @@ class plantAddActivity : AppCompatActivity() {
                     startActivity(intent)
                 }
                 .addOnFailureListener { e -> Log.d("mytag", "Error writing document", e) }
+
+
+        }
+
+
+        //메인 화면에 데이터 나열하기
+        binding.growBtn.setOnClickListener {
+            db.collection("Contacts")   // 작업할 컬렉션
+                .get()      // 문서 가져오기
+                .addOnSuccessListener { result ->
+                    // 성공할 경우
+                    for (document in result) {  // 가져온 문서들은 result에 들어감
+                        val item =
+                            ListLayout(
+                                document["name"] as String,
+                                document["Spinner"] as String,
+                                document["date"] as String
+                            )
+                    }
+                    adapter.notifyDataSetChanged()  // 리사이클러 뷰 갱신
+                }
+                .addOnFailureListener { exception ->
+                    // 실패할 경우
+                    Log.w("MainActivity", "Error getting documents: $exception")
+                }
         }
     }
 }
